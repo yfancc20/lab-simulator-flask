@@ -21,8 +21,9 @@ migrate = Migrate(compare_type=True)
 debug_toolbar = DebugToolbarExtension()
 bootstrap = Bootstrap()
 
-
-class BaseModel(PropsMixin, Model):
+# 基本 Model, 各個 DB Model 皆有此 class 的基本操作
+# class BaseModel(PropsMixin, Model):
+class BaseModel(Model):
     __table_args__ = {"mysql_charset": "utf8mb4", "extend_existing": True}
     id = Column(Integer, primary_key=True)
     created_at = Column(DateTime, default=datetime.utcnow())
@@ -147,4 +148,5 @@ class UnLockedAlchemy(SQLAlchemy):
         return super().apply_driver_hacks(app, info, options)
 
 
+# 定義 DB instance 的地方
 db = UnLockedAlchemy(model_class=BaseModel)

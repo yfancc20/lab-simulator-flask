@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+  <!-- 主視覺壁紙 Contents -->
   <div class="home">
     <div class="row">
       <div class="col-sm-12 home__block1">
@@ -45,6 +46,8 @@
         </div>
       </div>
     </div>
+
+    <!-- FEATURED PRODUCTS -->
     {% if products %}
       <div class="home__featured">
         <h2 class="text-center">Featured products</h2>
@@ -53,5 +56,6 @@
         </div>
       </div>
     {% endif %}
+    
   </div>
 {% endblock %}

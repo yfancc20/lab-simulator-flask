@@ -126,6 +126,8 @@
         </div>
       </div>
       {% block navigation %}
+
+      <!-- 首頁 Menu Items -->
       <div class="navbar__menu container d-block">
         <nav class="navigation">
           {{ macros.menu(top_menu) }}
@@ -134,8 +136,11 @@
       {% endblock %}
     </header>
     {% endblock %}
+
+    <!-- 主區塊，供各個子頁繼承的 -->
     <div class="container maincontent">
-      {% block topcontent %}{% endblock topcontent %}
+      {% block topcontent %}
+      {% endblock topcontent %}
 
       {% for message in get_flashed_messages(with_categories=True) %}
       <br>
@@ -147,9 +152,11 @@
 
       {% block breadcrumb %}
       {% endblock breadcrumb %}
+
       {% block content %}
       {% endblock content %}
     </div>
+    
     {% block footer %}
     <footer class="footer">
       <div class="footer__menus">

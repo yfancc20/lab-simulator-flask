@@ -109,8 +109,8 @@ class Product(Model):
         return items
 
     @classmethod
-    @cache(MC_KEY_FEATURED_PRODUCTS.format("{num}"))
-    def get_featured_product(cls, num=8):
+    # @cache(MC_KEY_FEATURED_PRODUCTS.format("{num}"))
+    def get_featured_product(cls, num=8):   # 首頁的 featured products
         return cls.query.filter_by(is_featured=True).limit(num).all()
 
     def update_images(self, new_images):

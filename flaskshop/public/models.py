@@ -10,6 +10,7 @@ MC_KEY_MENU_ITEM_CHILDREN = "public:menuitem:{}:children"
 MC_KEY_PAGE_ID = "public:page:{}"
 
 
+# 首頁的 MenuItem (product_category)
 class MenuItem(Model):
     __tablename__ = "public_menuitem"
     title = Column(db.String(255), nullable=False)

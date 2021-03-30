@@ -55,6 +55,7 @@ def jinja_global_varibles(app):
 
     @app.context_processor
     def inject_menus():
+        # 首頁的 Top Menu
         top_menu = (
             MenuItem.query.filter(MenuItem.position == 1)
             .filter(MenuItem.parent_id == 0)
